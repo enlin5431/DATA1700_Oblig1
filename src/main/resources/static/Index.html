@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bestilling av kinobiletter</title>
+    <style>
+        .form-group {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .error {
+            color: red;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+
+        .form-group label {
+            margin-right: 10px;
+            width: 80px;
+        }
+
+        .square-input {
+            width: 35px;
+            height: 20px;
+            position: relative;
+        }
+        .square-input input {
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+<h1>Bestilling av kinobiletter</h1>
+
+<div class="form-group">
+    <label for="movieSelect">Velg film:</label>
+    <select id="movieSelect">
+        <option value="Velg film her">Velg film her</option>
+        <option value="James Bond">James Bond</option>
+        <option value="Avatar 2">Avatar 2</option>
+        <option value="Innsiden Ut">Innsiden ut</option>
+    </select>
+    <div id="movieSelectError" class="error"></div>
+</div>
+
+<div class="form-group">
+    <label for="quantity">Antall:</label>
+    <div class="square-input">
+        <input type="text" id="quantity" pattern="[0-9]*" required>
+    </div>
+    <div id="quantityError" class="error"></div>
+</div>
+
+<div class="form-group">
+    <label for="firstName">Fornavn:</label>
+    <input type="text" id="firstName" required>
+    <div id="firstNameError" class="error"></div>
+</div>
+
+<div class="form-group">
+    <label for="lastName">Etternavn:</label>
+    <input type="text" id="lastName" required>
+    <div id="lastNameError" class="error"></div>
+</div>
+
+<div class="form-group">
+    <label for="phoneNumber">Telefonnr:</label>
+    <input type="tel" id="phoneNumber" pattern="[0-9]{8}" required>
+    <div id="phoneNumberError" class="error"></div>
+</div>
+
+<div class="form-group">
+    <label for="email">Epost:</label>
+    <input type="email" id="email" required>
+    <div id="emailError" class="error"></div>
+</div>
+
+<button onclick="kjopBillett()">Kjøp billett</button>
+
+<h2>Alle billetter</h2>
+<ul id="billettListe"></ul>
+
+<button onclick="slettAlleBilletter()">Slett alle billettene</button>
+
+<script src="script.js"></script>
+</body>
+</html>
