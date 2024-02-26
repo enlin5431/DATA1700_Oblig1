@@ -41,12 +41,14 @@ function kjopBillett() {
         isValid = false;
     }
 
-    if (telefonNr.trim() === '') {
+    const telefonRegex = /^[0-9]{8}$/;
+    if (!telefonRegex.test(telefonNr)) {
         document.getElementById('phoneNumberError').textContent = 'Du må oppgi telefonnummer.';
         isValid = false;
     }
 
-    if (epost.trim() === '') {
+    const epostRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!epostRegex.test(epost)) {
         document.getElementById('emailError').textContent = 'Du må oppgi e-postadresse.';
         isValid = false;
     }
