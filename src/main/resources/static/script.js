@@ -1,4 +1,4 @@
-//Her er det første jeg gjør å definerer et tomt array for å lagre kinobillettobjekter
+//Her er det første jeg gjør å definerer et tomt Array for å lagre kinobillettobjekter
 let billetter = [];
 
 //Funksjon for å kjøpe kinobillettene
